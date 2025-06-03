@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  ad_format: MyString
+  ad_size: MyString
+  custom_width: MyString
+  custom_height: MyString
+  ad_txt_content: MyText
+  header_code: MyText
+  header_bidding: false
+  header_bidding_partners: MyText
+  fallback_image: false
+  start_date: 2025-05-30
+  end_date: 2025-05-30
+  budget: 9.99
+  bid_strategy: MyString
+  target_audience: MyText
+  target_locations: MyText
+  target_devices: MyString
+  user: one
+
+two:
+  title: MyString
+  description: MyText
+  ad_format: MyString
+  ad_size: MyString
+  custom_width: MyString
+  custom_height: MyString
+  ad_txt_content: MyText
+  header_code: MyText
+  header_bidding: false
+  header_bidding_partners: MyText
+  fallback_image: false
+  start_date: 2025-05-30
+  end_date: 2025-05-30
+  budget: 9.99
+  bid_strategy: MyString
+  target_audience: MyText
+  target_locations: MyText
+  target_devices: MyString
+  user: two
