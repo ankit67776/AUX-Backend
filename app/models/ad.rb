@@ -1,7 +1,7 @@
 class Ad < ApplicationRecord
   belongs_to :user
   has_one_attached :media
-  belongs_to :advertiser, class_name: "User"
+  # belongs_to :advertiser, class_name: "User"
   has_many :ad_requests, dependent: :destroy
 
   validates :title, :description, presence: true

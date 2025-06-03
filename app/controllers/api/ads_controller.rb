@@ -17,6 +17,7 @@ class Api::AdsController < ApplicationController
         }
       }, status: :created
     else
+
         render json: { errors: ad.errors.full_messages }, status: :unprocessable_entity
     end
   end
