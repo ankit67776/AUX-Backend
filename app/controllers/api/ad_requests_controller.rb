@@ -30,7 +30,7 @@ class Api::AdRequestsController < ApplicationController
 def index
   if params[:publisher_id].present?
     # Existing logic — publisher side
-    ad_requests = AdRequest.includes(ad: :advertiser).where(publisher_id: params[:publisher_id])
+    ad_requests = AdRequest.includes(ad: :user).where(publisher_id: params[:publisher_id])
 
     result = ad_requests.map do |request|
       ad = request.ad
