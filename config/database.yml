@@ -84,7 +84,7 @@ production:
     database: aux_backend_test_production
     username: aux_backend_test
     url: <%= ENV['DATABASE_URL'] %>
-    password: <%= ENV["AUX_BACKEND_TEST_DATABASE_PASSWORD"] %>
+   
   cache:
     <<: *primary_production
     database: aux_backend_test_production_cache
