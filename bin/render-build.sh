@@ -3,9 +3,12 @@ set -o errexit
 
 bundle install
 
-# Install SolidQueue initializer + migrations
-bundle exec rails solid_queue:install
+RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rails db:create
+RAILS_ENV=production bundle exec rails db:migrate
+export RAILS_ENV=production
 
-# Run database migrations, including the solid_queue_jobs table
-bundle exec rails db:prepare
+
+
+bundle exec rails db:create
 bundle exec rails db:migrate
