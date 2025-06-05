@@ -7,4 +7,5 @@ bundle install
 bundle exec rails solid_queue:install
 
 # Run database migrations, including the solid_queue_jobs table
+bundle exec rails db:prepare
 bundle exec rails db:migrate
