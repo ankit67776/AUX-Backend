@@ -82,10 +82,10 @@ production:
   primary: &primary_production
     <<: *default
     database: aux_backend_test_production
-    username: postgres
-    password: postgres 
-    host: localhost
-    # url: <%= ENV['DATABASE_URL'] %>
+    # username: postgres
+    # password: postgres 
+    # host: localhost
+    url: <%= ENV['DATABASE_URL'] %>
    
   cache:
     <<: *primary_production
