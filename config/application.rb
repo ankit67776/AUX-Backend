@@ -30,5 +30,8 @@ module AuxBackendTest
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.paths["db/migrate"] << "db/cache_migrate"
+    config.paths["db/migrate"] << "db/queue_migrate"
+    config.paths["db/migrate"] << "db/cable_migrate"
   end
 end

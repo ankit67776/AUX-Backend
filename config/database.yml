@@ -78,24 +78,48 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  primary: &primary_production
-    <<: *default
-    database: aux_backend_test_production
-    # username: postgres
-    # password: postgres 
-    # host: localhost
-    url: <%= ENV['DATABASE_URL'] %>
+# production:
+#   primary: &primary_production
+#     <<: *default
+#     database: aux_backend_test_production
+#     # username: postgres
+#     # password: postgres 
+#     # host: localhost
+#     url: <%= ENV['DATABASE_URL'] %>
    
+#   cache:
+#     <<: *primary_production
+#     database: aux_backend_test_production_cache
+#     migrations_paths: db/cache_migrate
+#   queue:
+#     <<: *primary_production
+#     database: aux_backend_test_production_queue
+#     migrations_paths: db/queue_migrate
+#   cable:
+#     <<: *primary_production
+#     database: aux_backend_test_production_cable
+#     migrations_paths: db/cable_migrate
+
+
+production:
+  primary:
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+
   cache:
-    <<: *primary_production
-    database: aux_backend_test_production_cache
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+    schema_search_path: cache,public
     migrations_paths: db/cache_migrate
+
   queue:
-    <<: *primary_production
-    database: aux_backend_test_production_queue
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+    schema_search_path: queue,public
     migrations_paths: db/queue_migrate
+
   cable:
-    <<: *primary_production
-    database: aux_backend_test_production_cable
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+    schema_search_path: cable,public
     migrations_paths: db/cable_migrate
