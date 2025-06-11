@@ -86,5 +86,5 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present? || ENV["RENDER"].present?
 
-  Rails.application.routes.default_url_options[:host] = "https://aux-backend.onrender.com"
+  Rails.application.routes.default_url_options[:host] = "https://abakwa.squaregroup.tech"
 end
