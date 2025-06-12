@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :ad_requests, only: [ :create, :index ] do
+    resources :ad_requests, path: "requests", only: [ :create, :index ] do
       member do
         patch :approve
         patch :reject
