@@ -14,7 +14,7 @@ class AuthController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      token = JsonWebToken.encode(user_id: user.id)
+      token = JsonWebToken.encode(user_id: user.id, role: user.role)
       render json: { token:, user: user.slice(:id, :name, :email, :role) }, status: :ok
     else
       render json: { errors: "Invalid credentials" }, status: :unauthorized

@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :ad_requests, foreign_key: :publisher_id, dependent: :destroy
   has_many :requested_ads, through: :ad_requests, source: :ad
   has_many :ads_as_advertiser, foreign_key: :advertiser_id, class_name: "Ad"
+  encrypts :ga_refresh_token
 end

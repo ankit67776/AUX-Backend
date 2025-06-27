@@ -29,7 +29,7 @@ class Api::AdRequestsController < ApplicationController
 
 def index
   if params[:publisher_id].present?
-    # Existing logic — publisher side
+    #  logic — publisher side
     ad_requests = AdRequest.includes(ad: :user).where(publisher_id: params[:publisher_id])
 
     result = ad_requests.map do |request|
@@ -49,7 +49,7 @@ def index
     render json: result, status: :ok
 
   elsif params[:advertiser_id].present?
-    # NEW logic — advertiser side
+    #  logic — advertiser side
     ad_requests = AdRequest.joins(:ad)
                            .includes(:publisher, ad: :media_attachment)
                            .where(ads: { user_id: params[:advertiser_id] })

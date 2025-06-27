@@ -28,6 +28,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # publisher registration routes
+  namespace :api do
+    post "publisher/connect-ga", to: "publishers#connect_ga"
+    post "publisher/complete-registration", to: "publishers#complete_registration"
+    get "publisher/analytics-snapshot", to: "publishers#analytics_snapshot"
+  end
+
   # namespace :api do
   #   get 'publishers/:publisher_id'
   # end

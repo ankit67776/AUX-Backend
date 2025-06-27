@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_02_001250) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_23_013031) do
+  create_schema "cable"
+  create_schema "cache"
+  create_schema "queue"
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -86,6 +90,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_02_001250) do
     t.string "role", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "ga_refresh_token"
+    t.string "ga_property_id"
+    t.string "company_name"
+    t.string "contact_name"
+    t.string "contact_title"
+    t.string "address"
+    t.string "website"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
