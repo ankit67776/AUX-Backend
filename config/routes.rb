@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   #
-  post "/register", to: "auth#register"
-  post "/login", to: "auth#login"
+  post "send_verification_code", to: "auth#send_verification_code"
+  post "verify_code_and_register", to: "auth#verify_code_and_register"
+  post "login", to: "auth#login"
+
 
   namespace :api do
     resources :ads, only: [ :create, :index, :show ]

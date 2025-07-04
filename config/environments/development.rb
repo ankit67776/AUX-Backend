@@ -69,4 +69,26 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   Rails.application.routes.default_url_options[:host] = "http://localhost:3000"
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              "mail.squaregroup.tech",
+  #   port:                 587,
+  #   domain:               "squaregroup.tech",
+  #   user_name:            "omkar@squaregroup.tech",
+  #   password:             "Omkar@123",
+  #   authentication:       "plain",
+  #   enable_starttls_auto: true
+  # }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.gmail.com",
+    port:                 587,
+    domain:               "gmail.com",
+    user_name:            "email",
+    password:             "password", # from Google App Passwords
+    authentication:       "plain",
+    enable_starttls_auto: true
+  }
 end

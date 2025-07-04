@@ -57,3 +57,4 @@ gem "cloudinary"
 gem "activestorage-cloudinary-service"
 gem "faraday"
 gem "dotenv-rails", groups: [ :development, :test ]
+gem 'newrelic_rpm'

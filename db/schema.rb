@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_23_013031) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_01_151046) do
   create_schema "cable"
   create_schema "cache"
   create_schema "queue"
@@ -97,6 +97,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_013031) do
     t.string "contact_title"
     t.string "address"
     t.string "website"
+    t.string "verification_code"
+    t.boolean "verified"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

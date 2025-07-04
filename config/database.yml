@@ -18,11 +18,18 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost                     # 'db' is the container name in docker-compose
+  port: 5432
+  username: postgres           # your desired username
+  password: postgres 
 
 
 development:
   <<: *default
   database: aux_backend_test_development
+  username: postgres
+  password: postgres 
+  host: localhost
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
