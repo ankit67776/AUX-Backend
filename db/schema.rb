@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_01_151046) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_04_082731) do
   create_schema "cable"
   create_schema "cache"
   create_schema "queue"
@@ -99,6 +99,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_01_151046) do
     t.string "website"
     t.string "verification_code"
     t.boolean "verified"
+    t.text "ga_refresh_token_ciphertext"
+    t.string "ga_refresh_token_bidx"
+    t.string "ga_refresh_token_key_hash"
+    t.index ["ga_refresh_token_key_hash"], name: "index_users_on_ga_refresh_token_key_hash", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

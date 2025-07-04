@@ -18,7 +18,7 @@ class AuthController < ApplicationController
       expires_in: 15.minutes
     )
 
-    UserMailer.send_verification_code(email, code, params[:name]).deliver_later
+    UserMailer.send_verification_code(email, code, params[:name]).deliver_now
     render json: { message: "Verification code sent to #{email}" }, status: :ok
   end
 
